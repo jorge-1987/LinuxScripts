@@ -9,7 +9,7 @@
 ##
 ## DATE: 10/11/2010
 ## 
-## VERSION: 1.1
+## VERSION: 1.2
 ##
 ## LANGUAGE: ESPAÑOL/SPANISH
 ##
@@ -19,16 +19,20 @@
 BackupArchivo()
 {
 echo "Ingrese el path/archivo a Copiar a la Cinta"
+echo "Enter the path of the file to backup in the Tape"
 #ARCHIVO=Ã`cat ArchivosBackup.tb`
 #echo "Se va a realizar el backup del archivo $ARCHIVO"
 read -p "Path: " ARCHIVO
 #echo $ARCHIVO
 echo "Realizando Backup de $ARCHIVO"
+echo "Making backup of $ARCHIVO"
 echo `mt -f /dev/nst0 stat` >> TapeBackup.log
 echo `date` >> TapeBackup.log
 echo "Se corrio Backup de $ARCHIVO" >> TapeBackup.log
+echo "Runing backup of $ARCHIVO" >> TapeBackup.log
 tar -cvzf /dev/nst0 $ARCHIVO
-echo "Terminado, pulse una tecla"
+echo "Backup terminado, pulse una tecla"
+echo "Backup finished, press any key"
 read
 }
 
