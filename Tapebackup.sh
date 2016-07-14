@@ -11,7 +11,7 @@
 ## 
 ## VERSION: 1.2
 ##
-## LANGUAGE: ESPAÑOL/SPANISH
+## LANGUAGE: ESPAÑOL/ENGLISH
 ##
 ## USAGE: Non Arguments.
 ##
@@ -90,11 +90,13 @@ read
 
 StatusCinta()
 {
-echo "El estado de la Cinta es el siguiente:"
+echo "Estado de la Cinta:"
+echo "Status of the Tape:"
 mt -f /dev/nst0 stat
 echo `date` >> TapeBackup.log
 echo "Se corrio Status" >> TapeBackup.log
 echo "Presione una tecla para finalizar"
+echo "Enter any key to end"
 read
 }
 
